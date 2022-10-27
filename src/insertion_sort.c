@@ -8,13 +8,14 @@ void sort(linked_list *llPtr)
 {
  // Add your sort function here
 
-node_t *curr=llPtr->head->next;
+node_t *curr=llPtr->head->next;//points to value being checked
 node_t *last_sort = llPtr->head;
 node_t *ptr_first=createNode(0);
 ptr_first->next=llPtr->head;
 
     while(curr!=NULL)
     {
+        printf("while 1 \n");
         ptr_first->next=llPtr->head;
         //curr->next=last_sort->next;
 
@@ -31,12 +32,14 @@ ptr_first->next=llPtr->head;
             {
                 while(ptr_first->next->data<curr->data)
                 {
+                    printf("while2 \n");
                     if(ptr_first->next->next->data>=curr->data)
                     {
                         curr->next=ptr_first->next->next;
                         ptr_first->next->next=curr;
                     }
                     ptr_first=ptr_first->next;
+                    break;
                 }
             }
             curr=last_sort->next;
