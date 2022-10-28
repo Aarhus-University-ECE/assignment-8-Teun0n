@@ -16,10 +16,10 @@ ptr_first->next=llPtr->head;
     while(curr!=NULL)
     {
         printf("while 1 \n");
-        ptr_first->next=llPtr->head;
-        //curr->next=last_sort->next;
+        ptr_first->next=llPtr->head;//is reset to point to first element
+        
 
-        if(curr->data<last_sort->data)
+        if(curr->data<last_sort->data) //checks if 
         {
             last_sort->next=curr->next;
 
@@ -47,8 +47,8 @@ ptr_first->next=llPtr->head;
         }
         else
         {
-        curr=curr->next;
-        last_sort=last_sort->next;
+        curr=curr->next;//moves up a node.
+        last_sort=last_sort->next;//moves up a node.
         }
         
     }
