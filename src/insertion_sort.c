@@ -7,7 +7,7 @@
 void sort(linked_list *llPtr)
 {
  // Add your sort function here
-
+/*
 node_t *curr=llPtr->head->next;//points to value being checked
 node_t *last_sort = llPtr->head;
 node_t *ptr_first=createNode(0);
@@ -51,5 +51,5 @@ ptr_first->next=llPtr->head;
         last_sort=last_sort->next;//moves up a node.
         }
         
-    }
+    }*/
 }
