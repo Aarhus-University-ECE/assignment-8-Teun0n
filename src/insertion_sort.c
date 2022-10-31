@@ -8,13 +8,13 @@ void sort(linked_list *llPtr)
 {
  // Add your sort function here
 //pointing to NULL at some point, should run if fixed
-
+/*
 node_t *curr=llPtr->head->next;//points to value being checked, starts at second node.
 node_t *last_sort = llPtr->head;//points to last sorted node, starts at first node
 node_t *ptr_first=createNode(0); //"dummy node" which has a meaningless value.
 ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
 
-    while(curr!=NULL)
+    while(last_sort->next!=NULL)
     {
         printf("while 1 \n");
         ptr_first->next=llPtr->head;//is reset to point to first element
@@ -39,14 +39,11 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
                     printf("while2 \n");
                     if(ptr_first->next->next->data>=curr->data)//runs through nodes starting from 2nd node until 
                     {
-                    
+                    //infinite loop error happens because of these definitions.
                         curr->next=ptr_first->next->next;
                         ptr_first->next->next=curr;
-                    }
-                    if(ptr_first->next->data<curr->data)
-                    {
                         ptr_first=ptr_first->next;
-                    }
+                    
                     
                 }
             }
@@ -60,4 +57,5 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
         }
         
     }
+    */
 }
