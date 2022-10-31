@@ -28,11 +28,11 @@ int empty(queue *q)
   // Add your empty function
   if(q->size==0)
     {
-      return 1;//returns if queue size is 0 meaning its empty.
+      return 1;//returns 1 if queue size is 0 meaning its empty.
     }
   else
   {
-    return 0;
+    return 0; //if queue isn't empty it returns 0.
   }
     
 }
@@ -59,6 +59,7 @@ void enqueue(queue *q, int x)
 int dequeue(queue *q)
 {
   // Add your dequeue function
+  
   assert(q->size>0);
 
   int front_data = q->front->data;
@@ -67,17 +68,19 @@ int dequeue(queue *q)
   {
     init_queue(q);
   }
+  /*
   else{
     for(int i=0;i<queue_size-1,i++)
     {
       q->rear=q->rear->next;
-      q->front=q->rear->next;
+      
     }
 
     q->rear->next=q->front;
     q->size=queue_size-1;
   }
-  
+  */
 
   return front_data;
+  
 }
