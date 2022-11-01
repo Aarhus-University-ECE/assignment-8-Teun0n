@@ -1,19 +1,6 @@
 #include "list_queue.h"
 #include <stdbool.h>
 #include <assert.h>
-/*typedef struct qnode
-{
-  int data;
-  struct qnode *next;
-} qnode;
-
-typedef struct queue
-{
-  int size;
-  qnode *front;
-  qnode *rear;
-} queue;*/
-
 
 void init_queue(queue *q)
 {
@@ -45,15 +32,19 @@ void enqueue(queue *q, int x)
   insert->data=x;//new nodes data is set to input x.
 
   if(q->size==0)//if queue is empty node is at the front of queue.
+
   {
     q->front=insert;//front pointer is set to point at insert.
+
   }
-  else
+
+  else //queue isn't empty.
   {
     q->rear->next=insert;//if node isn't first rear is set to point at node.
+
   }
-  q->rear=insert;
-  q->size++;
+  q->rear=insert;//rear is set to equal insert, because rear is always the last added node.
+  q->size++;//one is added to size.
 }
 
 int dequeue(queue *q)
