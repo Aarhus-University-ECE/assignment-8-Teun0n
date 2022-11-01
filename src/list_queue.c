@@ -75,5 +75,5 @@ int dequeue(queue *q)
       q->front=q->front->next;//next in queue is now front.
       q->size--;//queue size is reduced by one.
   }
-  return front_data;//fronts data is returned.
+  return front_data;//fronts data before dequeue is returned.
 }
