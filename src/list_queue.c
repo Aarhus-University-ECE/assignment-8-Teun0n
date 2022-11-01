@@ -60,21 +60,20 @@ int dequeue(queue *q)
 {
   // Add your dequeue function
   
-  assert(q->size>0);
-
-  int front_data = q->front->data;
-  int queue_size = q->size;
-  if(q->size==1)
-  {
-    init_queue(q);
-  }
+  assert(q->size>0);// if queue is empty, dequeue can't happen.
+  int front_data=q->front->data;//front datas value is saved in front_data, before dequeue.
   
-  else{
+
+  if(q->size==1)
+  /*if size is equal to one when queue goes through, dequeue function size will be 0 after, meaning queue needs to be intialized*/
+  {
+    init_queue(q);//queue is initialized.
+  }
+  else
+  {
     
       q->front=q->front->next;
-      q->size=queue_size-1;
-    }
-    
-  return front_data;
-  
+      q->size--;
+  }
+  return front_data;//fronts data is returned.
 }
