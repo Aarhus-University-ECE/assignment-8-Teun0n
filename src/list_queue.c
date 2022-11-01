@@ -68,19 +68,13 @@ int dequeue(queue *q)
   {
     init_queue(q);
   }
-  /*
+  
   else{
-    for(int i=0;i<queue_size-1,i++)
-    {
-      q->rear=q->rear->next;
-      
+    
+      q->front=q->front->next;
+      q->size=queue_size-1;
     }
-
-    q->rear->next=q->front;
-    q->size=queue_size-1;
-  }
-  */
-
+    
   return front_data;
   
 }
