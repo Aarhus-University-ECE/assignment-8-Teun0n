@@ -1,6 +1,7 @@
 #include "insertion_sort.h"
 #include "linked_list.h"
 #include <stdio.h>
+#include <assert.h>
 
 
 
@@ -8,7 +9,7 @@ void sort(linked_list *llPtr)
 {
  // Add your sort function here
 //pointing to NULL at some point, should run if fixed
-/*
+assert(llPtr->head!=NULL);//if list is empty it can't be sorted.
 node_t *curr=llPtr->head->next;//points to value being checked, starts at second node.
 node_t *last_sort = llPtr->head;//points to last sorted node, starts at first node
 node_t *ptr_first=createNode(0); //"dummy node" which has a meaningless value.
@@ -29,22 +30,22 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
                 curr->next=llPtr->head; //current node's next is set to first node
                 llPtr->head=curr; //and llPtr head, which is the first value in node_t, is set to current value.
             }
-            else //if current data isn't smaller than next first node:
+            else //if current data isn't smaller than next ptr_first:
             {
                 //while(ptr_first->next->data<=curr->data)
-                while(ptr_first->next->data<curr->data)
+                while(ptr_first->next->data>curr->data)
                 
                 {
-                    
                     printf("while2 \n");
-                    if(ptr_first->next->next->data>=curr->data)//runs through nodes starting from 2nd node until 
+                    if(ptr_first->next->data<curr->data)
                     {
-                    //infinite loop error happens because of these definitions.
                         curr->next=ptr_first->next->next;
-                        ptr_first->next->next=curr;
+                        break;
+                    }
+                    else
+                    {
                         ptr_first=ptr_first->next;
-                    
-                    
+                    }
                 }
             }
             curr=last_sort->next;
@@ -57,5 +58,5 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
         }
         
     }
-    */
+    
 }
