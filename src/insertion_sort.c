@@ -15,7 +15,7 @@ node_t *last_sort = llPtr->head;//points to last sorted node, starts at first no
 node_t *ptr_first=createNode(0); //"dummy node" which has a meaningless value.
 ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
 
-    while(last_sort->next!=NULL)
+    while(curr!=NULL)
     {
         printf("while 1 \n");
         ptr_first->next=llPtr->head;//is reset to point to first element
@@ -37,7 +37,7 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
                 
                 {
                     printf("while2 \n");
-                    if(ptr_first->next->data<curr->data)
+                    if(ptr_first->next->data<=curr->data)
                     {
                         curr->next=ptr_first->next->next;
                         break;
@@ -47,11 +47,11 @@ ptr_first->next=llPtr->head; //"dummy node" is set to point to first node.
                         ptr_first=ptr_first->next;
                     }
                 }
+                 
             }
-            curr=last_sort->next;
-
+            last_sort=curr;
         }
-        else
+        else// if curr is larger than last sort
         {
         curr=curr->next;//moves up a node.
         last_sort=last_sort->next;//moves up a node.
